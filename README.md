@@ -7,6 +7,7 @@ Created by Packer#9020 with help and guidance from HyperCoder#2975
 ```json
 {
   "prefix":"",
-  "token":""
+  "token":"",
+  "owners":["id-here"]
 }
 ```
