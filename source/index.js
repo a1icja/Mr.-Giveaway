@@ -38,7 +38,7 @@ new class extends Client {
             if (message.author.bot || !message.member) return;
             if (!message.content.startsWith(this.config.prefix)) return;
 
-            message.globalAdmin = message.author.id === "156859037890117632" || message.author.id === "105408136285818880";
+            message.globalAdmin = !!this.client.config.owners.includes(message.author.id);
 
             const content = message.content.slice(this.config.prefix.length);
 
