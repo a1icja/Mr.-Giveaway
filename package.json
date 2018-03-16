@@ -3,6 +3,7 @@
     "discord.js": "github:hydrabolt/discord.js",
     "json-maker": "^1.2.4",
     "klaw": "^2.0.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "uws": "^9.14.0"
   }
 }

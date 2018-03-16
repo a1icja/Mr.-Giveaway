@@ -27,8 +27,8 @@ new class extends Client {
         this.on('ready', () => {
             console.log(`Client connected with ${this.guilds.size} guilds, ${this.channels.size} channels, and ${this.users.size} users.`);
 
-            this.user.setActivity(`mg!help | ${this.guilds.size} Guilds`);
-            setInterval(() => this.user.setActivity(`mg!help | ${this.guilds.size} Guilds`), 1000 * 60 * 2);
+            this.user.setActivity(`${this.config.prefix}help | ${this.guilds.size} Guilds`);
+            setInterval(() => this.user.setActivity(`${this.config.prefix}help | ${this.guilds.size} Guilds`), 1000 * 60 * 2);
 
             if (cache.length) cache.forEach(g => new Giveaway(this, null, g.match, g));
             this.clearCache();
@@ -38,7 +38,7 @@ new class extends Client {
             if (message.author.bot || !message.member) return;
             if (!message.content.startsWith(this.config.prefix)) return;
 
-            message.globalAdmin = !!this.client.config.owners.includes(message.author.id);
+            message.globalAdmin = !!this.config.owners.includes(message.author.id);
 
             const content = message.content.slice(this.config.prefix.length);
 
