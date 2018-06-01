@@ -81,7 +81,7 @@ class Giveaway {
 
             //const users = await this.msg.reactions.get("%F0%9F%8E%89").users.fetch();
             const users = await this.msg.reactions.get("🎉").users.fetch();
-            const list = users.filterArray(u => u.id !== this.msg.author.id);
+            const list = users.array().filter(u => u.id !== this.msg.author.id);
 
             if (!list.length) {
                 embed.description = `Winner: No one.`;

@@ -23,7 +23,7 @@ module.exports = class extends Command {
 
         const winnerIds = lastGiveaway.winners.map(u => u.id);
 
-        const users = (await lastGiveaway.msg.reactions.get("🎉").users.fetch()).filterArray(u => u.id !== lastGiveaway.msg.author.id && (lastGiveaway.winners.length && !winnerIds.includes(u.id)));
+        const users = (await lastGiveaway.msg.reactions.get("🎉").users.fetch()).array().filter(u => u.id !== lastGiveaway.msg.author.id && (lastGiveaway.winners.length && !winnerIds.includes(u.id)));
 
         if (!users.length) return message.channel.send("All users who entered were chosen.");
 
