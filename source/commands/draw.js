@@ -12,7 +12,7 @@ module.exports = class extends Command {
 
         const match = /(?:draw)(?:\s+(?:<#)?(\d{17,20})(?:>)?)?(?:\s+(\d+))/i.exec(message.content);
 
-        if (!match) return message.channel.send('Invalid Command Usage: `mg!draw [channel-mention|channel-id] <giveaway-number>`');
+        if (!match) return message.channel.send(`Invalid Command Usage: \`${this.client.config.prefix}draw [channel-mention|channel-id] <giveaway-number>\``);
 
         const channel = match[1] ? message.guild.channels.get(match[1]) || message.channel : message.channel;
 

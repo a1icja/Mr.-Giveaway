@@ -10,7 +10,7 @@ module.exports = class extends Command {
     execute(message) {
         if (message.globalAdmin) {
             const match = /reload (.+)/i.exec(message.content);
-            if (!match) return message.channel.send("INVALID SYNTAX: `mg!reload commmands:<command-name>`");
+            if (!match) return message.channel.send(`INVALID SYNTAX: \`${this.client.config.prefix}reload commmands:<command-name>\``);
 
             this.client.reload(match[1]).then(() => {
                 message.channel.buildEmbed()

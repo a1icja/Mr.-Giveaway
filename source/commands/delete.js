@@ -13,7 +13,7 @@ module.exports = class extends Command {
 
         const match = /(?:delete|stop|end)(?:\s+(?:<#)?(\d{17,20})(?:>)?)?(?:\s+(\d+))/i.exec(message.content);
 
-        if (!match) return message.channel.send('Invalid Command Usage: `mg!delete [channel-mention|channel-id] <giveaway-number>`');
+        if (!match) return message.channel.send(`Invalid Command Usage: \`${this.client.config.prefix}delete [channel-mention|channel-id] <giveaway-number>\``);
 
         const channel = match[1] ? message.guild.channels.get(match[1]) || message.channel : message.channel;
 
